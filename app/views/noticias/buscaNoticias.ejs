@@ -49,12 +49,13 @@
 			    	<div class="row">
 			    		<div class="col-md-12">
 			    			<div class="noticia_wrapper">
-				    			<span class="noticia_autor"><%=noticias[i].autor %></span>
-				    			<a href="noticia?id_noticia=<%=noticias[i].id %>" class="noticia_titulo"><%=noticias[i].titulo %></a>
-				    			<span class="noticia_data">Data de Criação da Notícia <%=noticias[i].data_noticia.getDate()%>/<%=noticias[i].data_noticia.getMonth()+1%>/<%=noticias[i].data_noticia.getFullYear()%></span>
-  			    			<br />
+				    			<span class="noticia_autor">Autor: <%=noticias[i].autor %></span>
+				    			<a href="noticia?id_noticia=<%=noticias[i].id %>" class="noticia_titulo">Título: <%=noticias[i].titulo %></a>
+				    			<span class="noticia_data">Data de Criação da Notícia: <%=noticias[i].data_noticia.getDate()%>/<%=noticias[i].data_noticia.getMonth()+1%>/<%=noticias[i].data_noticia.getFullYear()%></span>
+				    			<font class="assunto"  face="Arial" color="red" size="4px"> Assunto: <%=noticias[i].assunto %></font><br />
+				    			<br />
 				    			<p class="noticia_resumo">
-				    				<%=noticias[i].resumo %>
+				    				Resumo: <%=noticias[i].resumo %>
 				    			</p>
 				    		</div>
 				    	</div>

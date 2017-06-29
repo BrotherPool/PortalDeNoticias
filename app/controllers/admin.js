@@ -10,6 +10,7 @@ module.exports.noticias_salvar=function(application,req,res){
 		req.assert('autor','Autor é obrigatório').notEmpty();
 		req.assert('data_noticia','Data é obrigatório').notEmpty().isDate({format: 'YYYY-MM-DD' });
 		req.assert('noticia','Noticia é obrigatório').notEmpty();
+		req.assert('assunto','Assunto é obrigatório').notEmpty();
 
 		var erros=req.validationErrors();
 		if(erros){

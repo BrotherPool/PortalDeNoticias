@@ -19,31 +19,36 @@
 	</head>
 	<body>
 
-		<h1>Pesquisar notícia</h1>
+		<h1>Adicionar notícia</h1>
 		<br />
-
-		<% if(validacao) { %>
-			<ul>
-				<% for(var i = 0; i < validacao.length; i++) { %>
-					<li>
-						<%= validacao[i].msg %>
-					</li>
-				<% } %>
-			</ul>
-		<% } %>
-
-		<form action="elementos?autor=<%=noticia.autor%>" method="get" >
+		
+		<input type="radio" name="gender" value="male"> te<br>
+		<input type="radio" name="gender" value="male"> Malete<br>
+		<input type="text" id="teste" name="teste" value="ssss"><br>
+		<form action="" method="get" >
 			<label>Nome autor</label>
-			<input type="text" id="autor" name="autor" value="<%=noticia.autor%>" placeholder="Autor da notícia"/>
+			<input type="text" id="autor" name="autor" value="nada" placeholder="Autor da notícia"/>
 			<br />
-			<label>Data Notícia</label>
-			<input type="date" id="data_noticia" name="data_noticia" value="<%=noticia.data_noticia%>">
+			<input type="date" id="data_noticia" name="data_noticia" value="nada">
 			<br />
-			<label>Assunto Notícia</label>
-			<input type="text" id="assunto" name="assunto" value="<%=noticia.assunto%>" placeholder="Assunto da notícia"/>
-			<br />
-			<input type="submit" value="Buscar" />
+			<input type="submit" value="Go to Google" />
+			<input type="radio" name="botao" id="botao" onclick="javascript:mudarCor();">tsdadad<br>
+			<input type="radio" name="botao" value="male" onclick="javascript:mudarCor2();"> Malete<br>
+			<p id="demo"></p>
 		</form>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script>
+function mudarCor(){
+
+	document.getElementById("autor").value = "tsda";
+}
+function mudarCor2(){
+	document.getElementById("autor").value = "teste";
+}
+
+
+</script>
+
+
 	</body>
 </html>

@@ -24,11 +24,13 @@ module.exports.busca=function(application,req,res){
 }
 module.exports.elementos=function(application,req,res){
 	var connection=application.config.dbConnection();
+
 		var noticiasModel=new application.app.models.NoticiasDAO(connection);
 
 		var id_noticia=req.query;
-		console.log(id_noticia.data_noticia);
-		if(id_noticia.autor!="" && id_noticia.data_noticia=="")
+		console.log(id_noticia);
+		//só nome
+		if(id_noticia.autor!="" && id_noticia.data_noticia==""&& id_noticia.assunto=="")
 		{
 			
 			noticiasModel.getNoticiasPNome(id_noticia,function(error,result){
@@ -36,16 +38,48 @@ module.exports.elementos=function(application,req,res){
 			res.render("noticias/buscaNoticias",{ noticias :result});
 		});
 		}
-		else if(id_noticia.autor=="" && id_noticia.data_noticia!="")
+		//só assunto
+		else if(id_noticia.autor=="" && id_noticia.data_noticia==""&& id_noticia.assunto!="")
 		{
-			noticiasModel.getNoticiasPData(id_noticia,function(error,result){
-			res.render("noticias/noticias",{ noticias :result});
+			
+			noticiasModel.getNoticiasPAssunto(id_noticia,function(error,result){
+				//console.log(result.titulo);
+			res.render("noticias/buscaNoticias",{ noticias :result});
 		});
 		}
-		else if(id_noticia.autor!="" && id_noticia.data_noticia!="")
+		//só data
+		else if(id_noticia.autor=="" && id_noticia.data_noticia!="" && id_noticia.assunto=="")
+		{
+			noticiasModel.getNoticiasPData(id_noticia,function(error,result){
+			res.render("noticias/buscaNoticias",{ noticias :result});
+		});
+		}
+		//nome e data
+		else if(id_noticia.autor!="" && id_noticia.data_noticia!="" && id_noticia.assunto=="")
 		{
 			noticiasModel.getNoticiasPNomePData(id_noticia,function(error,result){
-			res.render("noticias/noticias",{ noticias :result});
+			res.render("noticias/buscaNoticias",{ noticias :result});
+		});
+		}
+		//nome e assunto
+		else if(id_noticia.autor!="" && id_noticia.data_noticia=="" && id_noticia.assunto!="")
+		{
+			noticiasModel.getNoticiasPNomePAssunto(id_noticia,function(error,result){
+			res.render("noticias/buscaNoticias",{ noticias :result});
+		});
+		}
+		//data e assunto
+		else if(id_noticia.autor=="" && id_noticia.data_noticia!="" && id_noticia.assunto!="")
+		{
+			noticiasModel.getNoticiasPDataPAssunto(id_noticia,function(error,result){
+			res.render("noticias/buscaNoticias",{ noticias :result});
+		});
+		}
+		//todos
+		else if(id_noticia.autor!="" && id_noticia.data_noticia!="" && id_noticia.assunto!="")
+		{
+			noticiasModel.getNoticiasPNomePDataPAssunto(id_noticia,function(error,result){
+			res.render("noticias/buscaNoticias",{ noticias :result});
 		});
 		}
 		else{
