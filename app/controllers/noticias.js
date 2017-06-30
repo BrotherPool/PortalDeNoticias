@@ -11,7 +11,6 @@ module.exports.noticia=function(application,req,res){
 		var noticiasModel=new application.app.models.NoticiasDAO(connection);
 
 		var id_noticia=req.query;
-		console.log(id_noticia);
 		noticiasModel.getNoticia(id_noticia,function(error,result){
 			res.render("noticias/noticia",{ noticia :result});
 		});
@@ -28,7 +27,6 @@ module.exports.elementos=function(application,req,res){
 		var noticiasModel=new application.app.models.NoticiasDAO(connection);
 
 		var id_noticia=req.query;
-		console.log(id_noticia);
 		//só nome
 		if(id_noticia.autor!="" && id_noticia.data_noticia==""&& id_noticia.assunto=="")
 		{
