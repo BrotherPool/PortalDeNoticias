@@ -25,3 +25,17 @@ module.exports.noticias_salvar=function(application,req,res){
 			res.redirect('/noticias');
 		});
 }
+module.exports.noticias_apagar=function(application,req,res){
+	var noticia=req.query;
+		console.log(noticia);
+		
+
+
+		var connection=application.config.dbConnection();
+		var noticiasModel=new application.app.models.NoticiasDAO(connection);
+
+		noticiasModel.deletarNoticia(noticia,function(error,result){
+			//res.redirect('/noticias');
+			res.redirect('/noticias');
+		});
+}

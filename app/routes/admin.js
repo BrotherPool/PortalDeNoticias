@@ -7,5 +7,8 @@ module.exports=function(application){
 	application.post('/noticias/salvar',function(req,res){
 		application.app.controllers.admin.noticias_salvar(application,req,res);
 	});	
+	application.get('/apagar',function(req,res){
+		application.app.controllers.admin.noticias_apagar(application,req,res);
+	});	
 
 }

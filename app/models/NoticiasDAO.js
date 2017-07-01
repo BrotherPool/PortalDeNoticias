@@ -52,6 +52,10 @@ NoticiasDAO.prototype.getNoticia=function (id_noticia,callback){
 NoticiasDAO.prototype.salvarNoticia=function (noticia, callback){
 	this._connection.query('insert into noticias set ? ', noticia, callback);
 }
+NoticiasDAO.prototype.deletarNoticia=function (noticia, callback){
+	let deleta='DELETE FROM noticias WHERE id='+noticia.id_noticia+'';
+	this._connection.query(deleta, callback);
+}
 
 NoticiasDAO.prototype.updateNoticia=function (noticia, id,callback){
 	let update='UPDATE noticias SET titulo = "'+noticia.titulo+'",noticia="'+noticia.noticia+'",resumo="'+noticia.resumo+'",autor="'+noticia.autor+'",data_noticia="'+noticia.data_noticia+'",assunto="'+noticia.assunto+'" WHERE id = '+id.id_noticia+'';

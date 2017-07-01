@@ -17,6 +17,16 @@
 
 		<!-- favicon -->
 		<link rel="shortcut icon" href="images/favicon.ico" />
+		<script language="Javascript">
+			function confirmacao(id) {
+     		var resposta = confirm("Deseja remover esse registro?");
+ 
+     		if (resposta == true) {
+          		window.location = "/apagar?id_noticia="+id+"";
+
+     		}
+		}
+		</script>
 	</head>
 
 	<body>
@@ -59,7 +69,7 @@
 		    	</div>
 	    	</div>
 	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="noticias">Apagar a Notícia</a></button>
+	    		<button type="button" id="botao" class="btn btn-default"><a href="javascript:confirmacao(<%=noticia[0].id%>)" onclick="">Apagar a Notícia</a></button>
 	    		<button type="button" class="btn btn-default"><a href="modificar?id_noticia=<%=noticia[0].id %>">Modificar a Notícia</a></button>
 	    		<button type="button" class="btn btn-default"><a href="noticias">Ver todas as Notícias</a></button>
 	    	</div>
