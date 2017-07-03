@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Jul-2017 às 05:29
--- Versão do servidor: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Generation Time: Jul 03, 2017 at 03:21 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `noticias`
+-- Table structure for table `noticias`
 --
 
 CREATE TABLE `noticias` (
@@ -40,23 +38,19 @@ CREATE TABLE `noticias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `noticias`
+-- Dumping data for table `noticias`
 --
 
 INSERT INTO `noticias` (`id`, `titulo`, `noticia`, `resumo`, `autor`, `data_noticia`, `data_criacao`, `assunto`) VALUES
-(3, 'Teste update com erros', 'extra extra extra', 'eu não sei oq estou fazendo', 'levi', '2017-06-03', '2017-06-30 02:56:09', 'tecnologia'),
-(4, 'teste', 'teste', NULL, NULL, '2017-05-01', '2017-06-28 00:25:47', NULL),
-(5, 'teste da noticia 5', 'noticia 5 testando', 'resumo da noticia 5', 'manel', '2017-06-01', '2017-06-26 02:05:53', NULL),
-(6, 'vai se fuder', 'vai se fuder', NULL, NULL, '2017-06-17', '2017-06-28 00:26:01', NULL),
-(7, 'oloco', 'oloco', NULL, NULL, '2017-06-24', '2017-06-28 00:26:09', NULL),
-(9, 'testes', '5 e 7 meu', 'tá na hora tá na hora', 'levi', '2017-06-09', '2017-06-26 00:42:41', NULL),
-(10, 'dá um pulo vai pra frente', 'asdf asdf hjkl asdf hjkl', 'aprendi em informatica', 'levi', '2017-06-30', '2017-06-26 02:06:13', NULL),
-(11, 'de peixinho vai pra trás', 'safddsaffdsa', 'bati a cabeça no teclado', 'joao', '2017-06-01', '2017-06-26 00:43:19', NULL),
-(13, 'Teste do Timestamp', 'oloco meu 5 e 7 agora bixo', 'noticia do faustão', 'levi', '2017-06-20', '2017-06-26 00:40:15', NULL),
-(14, 'Teste de inclusão de notícia', 'teste total disso', 'Mais um teste de notícia', 'levi', '2017-06-16', '2017-06-30 00:13:25', 'terror'),
-(15, 'Teste 5', 'asdasdasdasd', 'asdsadasdsadasdas', 'levi', '2017-02-07', '2017-06-29 01:11:03', 'moda'),
-(16, 'teste', 'Eu não sei o que fazer', 'dedeasdasdasdadas', 'levi', '2017-06-09', '2017-06-28 23:47:06', 'moda'),
-(18, 'Noticia com todo o sistema funcionando corretamente', 'A notícia é que o trabalho da cadeira de Bd está concluido', 'O teste foi bem sucedido ', 'levi', '2017-07-01', '2017-07-01 03:27:16', 'tecnologia');
+(1, 'Tiroteio deixa feridos do lado de fora de mesquita em Avignon, na França', 'Segundo o site do jornal “La Provence”, testemunhas afirmam que dois homens encapuzados chegaram em um Renault Clio, e um deles desceu e começou a atirar no meio da rua, por volta das 22h30 (18h30 em Brasília), enquanto as pessoas saíam do templo religioso.', 'Dois homens em um carro dispararam quando pessoas estavam saindo da mesquita. Oito ficaram feridas.', 'Emanuel', '2017-07-02', '2017-07-02 23:11:21', 'Violência'),
+(2, 'Fortaleza empata com Confiança dentro de casa', 'Fortaleza joga igual criança e empata com um time fulerage. Bonamigo garotiza nas substituições e deixa o morto do Leandro Cearense jogando os 90 minutos. Torcida vaia com gosto, pra aprenderem a respeitar quem paga ingresso pra ver jogo bosta.', 'A desgraça desse time só faz raiva', 'Emanuel', '2017-07-02', '2017-07-02 23:13:28', 'Esporte'),
+(3, 'Gretchen participa de novo clipe de Katy Perry', 'Sabe quem participa do clipe que a rainha americana do pop Katy Perry lança mundialmente amanhã? Gretchen, chamada pela própria Katy de “The brazilian queen of bumbum” (a rainha brasileira do bumbum). O convite para ela participar da gravação de “Swish swish”, parceria da americana com Nicki Minaj, partiu de Katy, que conheceu a brasileira através da internet — a cantora acompanha e se diverte com os “memes” de Gretchen nas redes sociais, chegando a comentar em alguns deles.', 'Konga la konga', 'Levi', '2017-07-01', '2017-07-02 23:15:46', 'Famosos'),
+(4, 'Blogueira Alice Salazar ensina tutorial de maquiagem para Festa Junina', 'Junho está acabando, mas quem disse que as comemorações de São João chegaram ao fim? Os arraiás continuam e ainda dá tempo de você aprender a fazer um make BAPHO com a blogueira e maquiadora Alice Salazar.', 'Em pouco tempo você consegue ficar linda para os arraiás', 'Emanuele', '2017-07-03', '2017-07-02 23:18:03', 'Moda'),
+(5, 'SG está fora do TI', 'Equipe brasileira de Dota perde a vaga no The International 2017 para a equipe Infamous, do Peru. Stomp de 3x0. Obrigado SG!', 'Equipe brasileira perde a vaga para boludos', 'Levi', '2017-07-01', '2017-07-02 23:19:59', 'E-Sports'),
+(6, 'Ceará leva mói de sola do Paraná', 'Kanal vê equipe do Paraná vestindo vermelho, azul e branco e treme as perna, saindo derrotado da partida. #ChupaKanal', 'KKKKKKKKKKKKKK', 'Emanuel', '2017-06-30', '2017-07-02 23:21:45', 'Esporte'),
+(7, 'Promoção dos Pacotes de Un’Goro já está disponivel!', 'Anunciada no dia 21 a promoção dos pacotes de Un’Goro já está disponível pra compra. Você tem até o dia 10 de Julho para adquirir esse bônus. Lembrando que a nova mecânica das lendárias repetidas ainda não está ativa, você pode comprar agora e aguardar o patch para abrir os seus pacotes.', 'Bônus na compra de pacotes de Un\'Goro no Hearthstone', 'Levi', '2017-06-29', '2017-07-02 23:33:57', 'E-Sports'),
+(8, 'Falsa alteração do nome artístico expõe força do marketing de Claudia', 'Só que Claudia Leitte sabe vender a própria imagem como poucos artistas no Brasil. O que explica a manutenção da artista no mercado. Saber usar o marketing a serviço da própria imagem é qualidade que valoriza artistas que transitam no mainstream. Grandes cantoras norte-americanas sabem da importância do marketing como instrumento quase essencial no desenvolvimento de uma carreira. Claudia Leitte tem essa qualidade – o que não a torna necessariamente importante do ponto de vista musical. Mas tampouco lhe tira o mérito de ser uma cantora conhecida e popular em todo o Brasil pela imagem cuidadosamente tratada por Claudia e pela equipe que administra a carreira da artista.', 'A trajetória vitoriosa de Claudia Leitte', 'Emanuele', '2017-06-28', '2017-07-02 23:25:49', 'Famosos'),
+(9, 'Apresentação dos trabalhos de Banco de Dados se iniciam amanhã', 'Os trabalhos serão entregues, com a esperança de ficar de passar em pelo menos uma cadeira esse semestre.', 'Professor Serra ouvirá os alunos mostrarem seus trabalhos', 'Levi', '2017-07-02', '2017-07-02 23:43:05', 'Educação');
 
 --
 -- Indexes for dumped tables
@@ -76,8 +70,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT for table `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
